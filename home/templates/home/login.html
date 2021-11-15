@@ -1,0 +1,39 @@
+{% extends 'home/base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'home/css/login.css' %}">
+{% endblock css %}
+
+{% block title %}Login{% endblock title %}
+{% block navigation %}
+<div class='container'>
+    <ul class="nav justify-content-center my-3">
+       <ul class="nav justify-content-center my-3">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/"><strong>Home</strong></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><strong>Jobs</strong></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><strong>Contact Us</strong></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"><strong>About Us</strong></a>
+        </li>
+    </ul>
+</div>
+{% endblock navigation %}
+{% block content %}
+<div class="main">
+<p class="sign" align="center">Login</p>
+<form class="form1" method='post'>
+{% csrf_token %}
+    <input class="un" type="text" align="center" placeholder="Username">
+    <input class="pass" type="password" align="center" placeholder="Password">
+    <a class="submit" align="center">Sign in</a>
+    <p class="forgot" align="center"><a href="#">Forgot Password?</a>&nbsp;<a href="/signup">Register</a</p>
+        
+ </form>           
+</div>
+{% endblock content %}
